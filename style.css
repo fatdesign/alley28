@@ -442,7 +442,8 @@ nav.scrolled {
 
     .highlights-grid {
         grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+        gap: 5rem;
+        /* Generous gap between items on mobile */
     }
 
     .grid-2-col {
