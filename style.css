@@ -464,6 +464,80 @@ nav.scrolled {
     z-index: 10;
 }
 
+/* Gallery Entrance Animation */
+@keyframes itemReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(80px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.js-enabled .reveal-on-scroll .perspective-item {
+    opacity: 0;
+}
+
+.js-enabled .reveal-on-scroll.active .perspective-item {
+    animation: itemReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.js-enabled .reveal-on-scroll.active .perspective-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.js-enabled .reveal-on-scroll.active .perspective-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.js-enabled .reveal-on-scroll.active .perspective-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.js-enabled .reveal-on-scroll.active .perspective-item:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+.js-enabled .reveal-on-scroll.active .perspective-item:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.js-enabled .reveal-on-scroll.active .perspective-item:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.js-enabled .reveal-on-scroll.active .perspective-item:nth-child(7) {
+    animation-delay: 0.35s;
+}
+
+.js-enabled .reveal-on-scroll.active .perspective-item:nth-child(8) {
+    animation-delay: 0.45s;
+}
+
+.js-enabled .reveal-on-scroll.active .perspective-item:nth-child(9) {
+    animation-delay: 0.55s;
+}
+
+.js-enabled .reveal-on-scroll.active .perspective-item:nth-child(10) {
+    animation-delay: 0.7s;
+}
+
+.js-enabled .reveal-on-scroll.active .perspective-item:nth-child(11) {
+    animation-delay: 0.8s;
+}
+
+.js-enabled .reveal-on-scroll.active .perspective-item:nth-child(12) {
+    animation-delay: 0.65s;
+}
+
+.js-enabled .reveal-on-scroll.active .perspective-item:nth-child(13) {
+    animation-delay: 0.75s;
+}
+
+
 /* Radical Art Shapes (8-Value Blobs & Clipping Synergy) */
 .perspective-item:nth-child(1) {
     border-radius: 68% 32% 43% 57% / 41% 30% 70% 59%;
