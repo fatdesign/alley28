@@ -472,9 +472,14 @@ nav.scrolled {
     }
 
     .marquee-item {
-        width: 70vw;
-        height: 50vh;
-        padding: 0 20px;
+        width: 85vw;
+        height: 60vh;
+        padding: 0 10px;
+    }
+
+    .swipe-caption {
+        font-size: 1.1rem;
+        margin-top: 1rem;
     }
 
     .food-track {
