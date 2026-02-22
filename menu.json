@@ -84,6 +84,18 @@
             "de": "Coco Popo Kaka",
             "en": "Coco Popo Kaka"
           }
+        },
+        {
+          "name": {
+            "de": "Lolo Popo",
+            "en": "Lolo Popo"
+          },
+          "price": "88.11",
+          "isSoldOut": false,
+          "desc": {
+            "de": "Kaka Pop",
+            "en": "Kaka Popo"
+          }
         }
       ]
     },
