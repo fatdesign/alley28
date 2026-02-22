@@ -347,7 +347,7 @@ nav {
     top: 0;
     width: 100%;
     padding: 1.2rem 0;
-    z-index: 1000;
+    z-index: 2500;
     transition: var(--transition-medium);
     background: #000;
     /* Boss-Level Black */
@@ -542,11 +542,11 @@ nav.scrolled {
 
 /* Hamburger Animation States */
 .mobile-menu-toggle.active .burger-line:first-child {
-    transform: rotate(45deg);
+    transform: translateY(9px) rotate(45deg);
 }
 
 .mobile-menu-toggle.active .burger-line:last-child {
-    transform: rotate(-45deg);
+    transform: translateY(-9px) rotate(-45deg);
 }
 
 .mobile-nav-overlay {
