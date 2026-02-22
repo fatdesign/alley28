@@ -1012,14 +1012,19 @@ nav.scrolled {
 
 .btn-shiny .btn-text {
     z-index: 2;
+    color: var(--color-white);
+    /* Fallback */
     background: linear-gradient(120deg,
-            rgba(255, 255, 255, 0.6) 30%,
-            rgba(255, 255, 255, 1) 50%,
-            rgba(255, 255, 255, 0.6) 70%);
+            rgba(255, 255, 255, 0.7) 10%,
+            rgba(255, 255, 255, 1) 40%,
+            rgba(255, 255, 255, 1) 60%,
+            rgba(255, 255, 255, 0.7) 90%);
     background-size: 200% auto;
-    color: transparent;
-    -webkit-background-clip: text;
+    color: var(--color-white);
+    /* Fallback */
     background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation: shine-text 3s linear infinite;
 }
 
