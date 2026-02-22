@@ -1096,13 +1096,13 @@ nav.scrolled {
     clip-path: inset(0 0 0 0);
 }
 
-.accent-image-wrap {
-    position: absolute;
-    bottom: -15%;
-    left: 0;
-    width: 50%;
-    z-index: 10;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+.iris-reveal {
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js-enabled .active .iris-reveal {
+    clip-path: circle(71% at 50% 50%);
 }
 
 .philosophy-creative .luxury-line-h {
@@ -1130,11 +1130,5 @@ nav.scrolled {
 
     .main-image-wrap {
         width: 100%;
-    }
-
-    .accent-image-wrap {
-        bottom: -10%;
-        left: 10%;
-        width: 40%;
     }
 }
