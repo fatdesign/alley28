@@ -173,8 +173,12 @@ a {
 .btn-reserve {
     position: relative;
     overflow: hidden;
+    background: #7a0b16;
+    /* Luxurious Dark Red */
+    border-color: #7a0b16;
+    color: var(--color-white);
     /* Subtle glow on the border */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(122, 11, 22, 0.4);
 }
 
 .btn-reserve::before {
@@ -185,11 +189,10 @@ a {
     width: 50%;
     height: 100%;
     background: linear-gradient(120deg,
-            rgba(191, 167, 130, 0) 0%,
-            rgba(191, 167, 130, 0.5) 50%,
-            /* Boss-Level Gold Accent */
-            rgba(191, 167, 130, 0) 100%);
-    animation: shine-sweep 3s infinite cubic-bezier(0.16, 1, 0.3, 1);
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    animation: shine-sweep 3s infinite linear;
     pointer-events: none;
 }
 
