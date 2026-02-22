@@ -430,6 +430,18 @@ nav.scrolled {
     width: 100%;
 }
 
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .nav-links {
@@ -509,18 +521,6 @@ nav.scrolled {
     .contact-gallery {
         height: 350px;
     }
-}
-
-.highlights-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
-}
-
-.grid-2-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xl);
 }
 
 /* Edge-to-Edge Chaotic Art Gallery */
