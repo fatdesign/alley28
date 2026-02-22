@@ -89,7 +89,7 @@
             display: flex;
             gap: 0;
             list-style: none;
-            margin: 0;
+            margin: 0 auto;
             padding: 0;
             width: max-content;
         }
@@ -284,15 +284,6 @@
             padding: 2rem 2rem 4rem;
             border-top: 1px solid rgba(0, 0, 0, 0.05);
         }
-
-        /* ── Nav fix on speisekarte dark hero ── */
-        #navbar .nav-link-boss {
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        #navbar.scrolled .nav-link-boss {
-            color: var(--color-black);
-        }
     </style>
 </head>
 
@@ -304,17 +295,41 @@
             <a href="index.html" class="logo">
                 <img src="logo/alley-logo.png" alt="Alley 28 Logo" style="height: 40px; width: auto;">
             </a>
+
+            <!-- Desktop Nav -->
             <div class="nav-links">
                 <a href="index.html#about" class="nav-link-boss">Konzept</a>
+                <a href="index.html#menu" class="nav-link-boss">Highlights</a>
                 <a href="index.html#gallery" class="nav-link-boss">Impressionen</a>
                 <a href="index.html#contact" class="nav-link-boss">Kontakt</a>
                 <a href="speisekarte.html" class="nav-link-boss" style="color: var(--accent);">Menü</a>
                 <span class="nav-underline-glide"></span>
             </div>
-            <a href="index.html#contact" class="btn-luxury btn-reserve"
+            <a href="index.html#contact" class="btn-luxury btn-reserve desktop-reserve"
                 style="padding: 0.6rem 1.5rem; font-size: 0.7rem;">Reservieren</a>
+
+            <!-- Mobile Burger Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Menu öffnen">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Fullscreen Overlay -->
+    <div class="mobile-nav-overlay">
+        <div class="mobile-nav-content">
+            <a href="index.html#about" class="mobile-nav-link">Konzept</a>
+            <a href="index.html#menu" class="mobile-nav-link">Highlights</a>
+            <a href="index.html#gallery" class="mobile-nav-link">Impressionen</a>
+            <a href="index.html#contact" class="mobile-nav-link">Kontakt</a>
+            <a href="speisekarte.html" class="mobile-nav-link" style="color: var(--accent);">Menü</a>
+            <div style="margin-top: 3rem;">
+                <a href="index.html#contact" class="btn-luxury btn-reserve"
+                    style="padding: 1rem 2.5rem; width: 100%; text-align: center;">Reservieren</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero -->
     <section class="menu-page-hero">
@@ -491,6 +506,30 @@
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 50);
         });
+
+        // ── Mobile Menu Toggle ────────────────────────────────────
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (mobileToggle && mobileOverlay) {
+            function toggleMenu() {
+                mobileToggle.classList.toggle('active');
+                mobileOverlay.classList.toggle('open');
+                document.body.style.overflow = mobileOverlay.classList.contains('open') ? 'hidden' : '';
+            }
+
+            mobileToggle.addEventListener('click', toggleMenu);
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            const reserveBtnMobile = mobileOverlay.querySelector('.btn-reserve');
+            if (reserveBtnMobile) {
+                reserveBtnMobile.addEventListener('click', toggleMenu);
+            }
+        }
 
         // ── Init ──────────────────────────────────────────────────
         init();
