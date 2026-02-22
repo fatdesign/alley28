@@ -302,7 +302,6 @@
             object-fit: cover;
             opacity: 0.6;
             filter: blur(3px);
-            transition: transform 0.1s linear;
             z-index: 0;
             will-change: transform;
         }
@@ -535,14 +534,6 @@
             if (parallaxImages.length === 0) return;
 
             window.addEventListener('scroll', () => {
-                // Turn off dynamic parallax on mobile to prevent flickering, just keep 3d transform for smoothness
-                if (window.innerWidth <= 768) {
-                    parallaxImages.forEach(img => {
-                        img.style.transform = 'translate3d(0, 0, 0)';
-                    });
-                    return;
-                }
-
                 parallaxImages.forEach(img => {
                     const parent = img.parentElement;
                     const rect = parent.getBoundingClientRect();
