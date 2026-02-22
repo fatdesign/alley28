@@ -72,30 +72,6 @@
             "en": "Seared beef · Yuzu ponzu · Microgreens"
           },
           "price": "16.90"
-        },
-        {
-          "name": {
-            "de": "Coco Mamuchka",
-            "en": "Coco Mamuchka"
-          },
-          "price": "88.11",
-          "isSoldOut": false,
-          "desc": {
-            "de": "Lolo Popo",
-            "en": "Lolo Popo"
-          }
-        },
-        {
-          "name": {
-            "de": "Popo Chachucka Kaka",
-            "en": "Popo Chachucka Kaka"
-          },
-          "price": "44.55",
-          "isSoldOut": false,
-          "desc": {
-            "de": "Koko Kakak Popo",
-            "en": "Koko Kakak Popo"
-          }
         }
       ]
     },
