@@ -470,7 +470,7 @@ nav.scrolled {
     grid-auto-rows: 15vh;
     gap: 1rem;
     /* More efficient interlock */
-    width: 100vw;
+    width: 100%;
     padding: 6rem 1vw;
 }
 
@@ -693,7 +693,7 @@ nav.scrolled {
     -webkit-overflow-scrolling: touch;
     height: 75vh;
     background: var(--bg-primary);
-    width: 100vw;
+    width: 100%;
     padding: 0 15vw;
     gap: 100px;
     /* Extravagant spacing */
@@ -783,4 +783,48 @@ nav.scrolled {
     padding: 0.5rem 1rem;
     backdrop-filter: blur(5px);
     pointer-events: none;
+}
+
+/* Base Food Gallery Styles (Contact Section) */
+.contact-gallery {
+    height: 500px;
+    overflow: hidden;
+}
+
+.food-gallery-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.food-track {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    animation: food-scroll-vertical 25s linear infinite;
+    gap: 2rem;
+}
+
+.food-item {
+    height: 300px;
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.food-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes food-scroll-vertical {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
 }
