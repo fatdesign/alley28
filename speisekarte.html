@@ -276,6 +276,42 @@
             opacity: 0.5;
         }
 
+        /* ── Editorial Intermissions ── */
+        .menu-intermission {
+            width: 100vw;
+            height: 60vh;
+            margin-left: calc(-50vw + 50%);
+            /* Full viewport width breakout */
+            margin-top: 4rem;
+            margin-bottom: 5rem;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-black);
+        }
+
+        .menu-intermission img {
+            width: 100%;
+            height: 125%;
+            /* Extra height for parallax */
+            object-fit: cover;
+            opacity: 0.8;
+            transition: transform 0.1s linear;
+        }
+
+        .menu-intermission-text {
+            position: absolute;
+            color: var(--color-white);
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 4rem);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-align: center;
+            opacity: 0.9;
+        }
+
         /* ── Footer allergen ── */
         .allergen-note {
             text-align: center;
@@ -451,12 +487,50 @@
                     <div class="items-grid">${itemsHtml}</div>`;
 
                 menuApp.appendChild(section);
+
+                // Inject Editorial Intermission after Dim Sum (idx 1) and Sushi (idx 4)
+                if (idx === 1) {
+                    const inter = document.createElement('div');
+                    inter.className = 'menu-intermission reveal-on-scroll';
+                    inter.innerHTML = `
+                        <img src="image/food 2.png" alt="Concept Food" class="parallax-img">
+                        <div class="menu-intermission-text">Signature Art</div>
+                    `;
+                    menuApp.appendChild(inter);
+                } else if (idx === 4) {
+                    const inter = document.createElement('div');
+                    inter.className = 'menu-intermission reveal-on-scroll';
+                    inter.innerHTML = `
+                        <img src="image/food 4.png" alt="Concept Food" class="parallax-img">
+                        <div class="menu-intermission-text">Culinary Craft</div>
+                    `;
+                    menuApp.appendChild(inter);
+                }
             });
 
             attachScrollReveal();
             attachRibbonTracking();
             attachSmoothScroll();
+            attachParallaxIntermissions();
             syncLangBtns(lang);
+        }
+
+        function attachParallaxIntermissions() {
+            const parallaxImages = document.querySelectorAll('.menu-intermission .parallax-img');
+            if (parallaxImages.length === 0) return;
+
+            window.addEventListener('scroll', () => {
+                parallaxImages.forEach(img => {
+                    const parent = img.parentElement;
+                    const rect = parent.getBoundingClientRect();
+                    // If image is in viewport
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        const scrollDist = window.innerHeight - rect.top;
+                        const yPos = -(scrollDist * 0.15);
+                        img.style.transform = `translateY(${yPos}px)`;
+                    }
+                });
+            });
         }
 
         function attachScrollReveal() {
