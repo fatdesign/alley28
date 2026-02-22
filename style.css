@@ -169,52 +169,6 @@ a {
     color: var(--color-black);
 }
 
-/* ── Magic UI Shiny Button Effect ── */
-.btn-reserve {
-    position: relative;
-    overflow: hidden;
-    background: #7a0b16;
-    /* Luxurious Dark Red */
-    border-color: #7a0b16;
-    color: var(--color-white);
-    /* Subtle glow on the border */
-    box-shadow: 0 0 10px rgba(122, 11, 22, 0.4);
-}
-
-.btn-reserve::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(120deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.5) 50%,
-            rgba(255, 255, 255, 0) 100%);
-    animation: shine-sweep 3s infinite linear;
-    pointer-events: none;
-}
-
-/* Hide shine when hovering (as button goes transparent) */
-.btn-reserve:hover::before {
-    display: none;
-}
-
-@keyframes shine-sweep {
-    0% {
-        left: -100%;
-    }
-
-    15% {
-        left: 200%;
-    }
-
-    100% {
-        left: 200%;
-    }
-}
-
 /* Boss-Level Editorial Utilities */
 .editorial-container {
     position: relative;
