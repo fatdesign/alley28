@@ -169,6 +169,39 @@ a {
     color: var(--color-black);
 }
 
+.btn-shiny {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-shiny::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: rotate(30deg);
+    transition: none;
+    animation: shine 3s infinite;
+    filter: blur(5px);
+}
+
+@keyframes shine {
+    0% {
+        left: -60%;
+    }
+
+    20% {
+        left: 130%;
+    }
+
+    100% {
+        left: 130%;
+    }
+}
+
 /* Boss-Level Editorial Utilities */
 .editorial-container {
     position: relative;
