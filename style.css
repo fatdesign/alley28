@@ -1059,3 +1059,82 @@ nav.scrolled {
     transform: scale(1) translateY(0);
     transition-delay: 0.3s;
 }
+
+/* ── Creative Philosophy Section ── */
+.philosophy-creative {
+    position: relative;
+    padding: 10rem 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.philosophy-creative .text-bg-luxury {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25vw;
+    opacity: 0.03;
+    writing-mode: unset;
+}
+
+.creative-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.image-composition {
+    position: relative;
+}
+
+.main-image-wrap {
+    width: 80%;
+    margin-left: auto;
+    clip-path: inset(0 0 0 0);
+}
+
+.accent-image-wrap {
+    position: absolute;
+    bottom: -15%;
+    left: 0;
+    width: 50%;
+    z-index: 10;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.philosophy-creative .luxury-line-h {
+    width: 60px;
+}
+
+.vertical-label {
+    position: absolute;
+    left: -2rem;
+    top: 0;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 0.7rem;
+    color: var(--accent);
+}
+
+@media (max-width: 991px) {
+    .creative-grid {
+        grid-template-columns: 1fr;
+        gap: 6rem;
+    }
+
+    .main-image-wrap {
+        width: 100%;
+    }
+
+    .accent-image-wrap {
+        bottom: -10%;
+        left: 10%;
+        width: 40%;
+    }
+}
