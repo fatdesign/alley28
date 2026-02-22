@@ -449,6 +449,61 @@ nav.scrolled {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
+
+    .perspective-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-auto-rows: 20vh !important;
+        gap: 0.5rem !important;
+        padding: 3rem 1rem !important;
+    }
+
+    .perspective-item {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+
+    .perspective-item:nth-child(even) {
+        grid-row: span 2 !important;
+    }
+
+    .perspective-item::after {
+        display: none;
+        /* Hide large numbers on mobile */
+    }
+
+    .marquee-item {
+        width: 70vw;
+        height: 50vh;
+        padding: 0 20px;
+    }
+
+    .food-track {
+        flex-direction: row;
+        width: max-content;
+        height: 100%;
+        animation: food-scroll-horizontal 20s linear infinite;
+    }
+
+    .food-item {
+        height: 100%;
+        width: 250px;
+        margin-right: 1rem;
+        margin-bottom: 0;
+    }
+
+    @keyframes food-scroll-horizontal {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .contact-gallery {
+        height: 350px;
+    }
 }
 
 .highlights-grid {
