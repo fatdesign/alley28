@@ -452,6 +452,21 @@ nav.scrolled {
         padding: var(--spacing-lg) 0;
     }
 
+    #contact .section-title {
+        text-align: center !important;
+    }
+
+    #contact .reveal-on-scroll {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-gallery {
+        display: none !important;
+    }
+
     .highlights-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
@@ -516,10 +531,6 @@ nav.scrolled {
         100% {
             transform: translateX(-50%);
         }
-    }
-
-    .contact-gallery {
-        height: 350px;
     }
 }
 
