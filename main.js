@@ -12,6 +12,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Mobile Navigation Toggle
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (mobileToggle && mobileOverlay) {
+        function toggleMenu() {
+            mobileToggle.classList.toggle('active');
+            mobileOverlay.classList.toggle('open');
+            document.body.style.overflow = mobileOverlay.classList.contains('open') ? 'hidden' : '';
+        }
+
+        mobileToggle.addEventListener('click', toggleMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Ensure reserve button also closes menu
+        const reserveBtnMobile = mobileOverlay.querySelector('.btn-reserve');
+        if (reserveBtnMobile) {
+            reserveBtnMobile.addEventListener('click', toggleMenu);
+        }
+    }
+
     // Reveal animations on scroll (Professional Agency Logic)
     const revealOptions = {
         threshold: 0.15,
