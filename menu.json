@@ -84,6 +84,18 @@
             "de": "Lolo Popo",
             "en": "Lolo Popo"
           }
+        },
+        {
+          "name": {
+            "de": "Popo Chachucka Kaka",
+            "en": "Popo Chachucka Kaka"
+          },
+          "price": "44.55",
+          "isSoldOut": false,
+          "desc": {
+            "de": "Koko Kakak Popo",
+            "en": "Koko Kakak Popo"
+          }
         }
       ]
     },
