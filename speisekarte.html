@@ -304,6 +304,15 @@
             filter: blur(3px);
             transition: transform 0.1s linear;
             z-index: 0;
+            will-change: transform;
+        }
+
+        @media(max-width: 768px) {
+            .menu-intermission {
+                height: 20vh;
+                margin-top: 2rem;
+                margin-bottom: 3rem;
+            }
         }
 
         .menu-intermission-text {
@@ -526,6 +535,14 @@
             if (parallaxImages.length === 0) return;
 
             window.addEventListener('scroll', () => {
+                // Turn off dynamic parallax on mobile to prevent flickering, just keep 3d transform for smoothness
+                if (window.innerWidth <= 768) {
+                    parallaxImages.forEach(img => {
+                        img.style.transform = 'translate3d(0, 0, 0)';
+                    });
+                    return;
+                }
+
                 parallaxImages.forEach(img => {
                     const parent = img.parentElement;
                     const rect = parent.getBoundingClientRect();
@@ -533,10 +550,10 @@
                     if (rect.top < window.innerHeight && rect.bottom > 0) {
                         const scrollDist = window.innerHeight - rect.top;
                         const yPos = -(scrollDist * 0.15);
-                        img.style.transform = `translateY(${yPos}px)`;
+                        img.style.transform = `translate3d(0, ${yPos}px, 0)`;
                     }
                 });
-            });
+            }, { passive: true });
         }
 
         function attachScrollReveal() {
